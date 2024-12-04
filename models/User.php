@@ -5,11 +5,10 @@
         private $password;
         private $role;
 
-        public function __construct($id, $username, $password, $role) {
-            $this->id = $id;
+        public function __construct( $username, $password) {
             $this->username = $username;
             $this->password = $password;
-            $this->role = $role;
+            $this->role = 0;
         }
     
         public function getId() {

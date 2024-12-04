@@ -1,4 +1,5 @@
 <?php
-    require_once "controllers/AuthController.php";
-    require_once "connection/Database.php";
-    $db = new Database();
+    require_once "config/config.php";
+    require_once APP_ROOT . "/controllers/AuthController.php";
+    $authController = new AuthController();
+    $authController->register();   
