@@ -15,7 +15,7 @@
             $this->password = '123';
             $this->port ;
             $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->username, $this->password);
-           
+            
         }
         public function getConnection(){
             return $this->conn;

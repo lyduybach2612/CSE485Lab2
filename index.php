@@ -1,11 +1,12 @@
 <?php
 require_once("config/config.php");
+$controllerName = ucfirst(isset($_GET['controller']) ? $_GET['controller']: 'News') . 'Controller';
+$actionName = $_GET['action'] ?? 'index';
 
+require_once("./controllers/$controllerName.php");
 
-require_once("./controllers/NewsController.php");
-
-$newsController = new NewsController();
-$newsController->detail();
+$newsController = new $controllerName();
+$newsController->$actionName();
 
 
 

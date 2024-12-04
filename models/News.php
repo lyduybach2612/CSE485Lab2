@@ -1,19 +1,19 @@
 <?php
     class News{
-        private $id;
+        private $id =0;
         private $title;
         private $content;
         private $image;
         private $created_at;
-        private $category_id;
+        private $category_name;
 
-        public function __construct($id, $title, $content, $image, $created_at, $category_id){
+        public function __construct($id, $title, $content, $image, $created_at, $category_name){
             $this->id = $id;
             $this->title = $title;
             $this->content = $content;
             $this->image = $image;
             $this->created_at = $created_at;
-            $this->category_id = $category_id;
+            $this->category_name = $category_name;
 
         }
 
@@ -33,8 +33,8 @@
         public function getCreatedAt(){
             return $this->created_at;
         }
-        public function getCategoryId(){
-            return $this->category_id;
+        public function getCategoryName(){
+            return $this->category_name;
         }
         public function setId($id){
             $this->id = $id;
@@ -51,8 +51,8 @@
         public function setCreated_at($created_at){
             $this->created_at = $created_at;
         }
-        public function setCategoryId($category_id){
-            $this->category_id = $category_id;
+        public function setCategoryName($category_name){
+            $this->category_name = $category_name;
         }
 
 
