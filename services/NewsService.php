@@ -44,11 +44,10 @@
         public function addNews($news){
             $db = new Database();
             $conn = $db->getConnection();
-            $sql = "INSERT INTO NEWS.NEWS(TITLE,CONTENT,IMAGE,CREATED_AT,CATEGORY_ID) VALUES(:title,:content,:image,:created_at,1)";
+            $sql = "INSERT INTO NEWS.NEWS(TITLE,CONTENT,IMAGE,CREATED_AT,CATEGORY_ID) VALUES(:title,:content,:image,now(),1)";
             $stmt= $conn->prepare($sql);
             $stmt->bindParam(":title", $news->getTitle());
             $stmt->bindParam(":content", $news->getContent());
-            $stmt->bindParam(":created_at", $news->getCreatedAt());
             $stmt->bindParam(":image",$news->getImage());
             $stmt->execute();
         }
