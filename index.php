@@ -4,7 +4,7 @@ $controllerName = ucfirst(isset($_GET['controller']) ? $_GET['controller']: 'New
 $actionName = $_GET['action'] ?? 'index';
 
 require_once("./controllers/$controllerName.php");
-
+ 
 $newsController = new $controllerName();
 $newsController->$actionName();
 

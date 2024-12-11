@@ -4,7 +4,6 @@
     class NewsController{
         public function index(){
             $tmp = isset($_GET["page"]) ? ($_GET["page"]) : 1;
-
             $newsService = new NewsService();
             $newsList = $newsService->getAllNews($tmp);
             include ("./view/news/index.php");
