@@ -1,6 +1,4 @@
 <?php
-    require_once "../../config/config.php";
-
 $message = '';
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (trim($_POST['username']) && trim($_POST['password'])) {
@@ -13,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $user = new User($username, $password);
             try {
                 $userService->saveUser($user);
-                header('Location:' . BASE_URL . '/view/auth/login.php?isRegistered=1');
+                header('Location:' . BASE_URL . '/login?isRegistered=1');
                 exit();
             } catch (PDOException $e) {
                 echo $e->getMessage();
@@ -47,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <label for="password" class="form-label">Mật khẩu</label>
                 <input type="password" name="password" required class="form-control" id="password">
             </div>
-            <div class="mb-3">Nếu đã có tài khoản, xin vui lòng đăng nhập <a class="text-primary" href="<?= BASE_URL ?>/view/auth/login.php">tại đây</a></div>
+            <div class="mb-3">Nếu đã có tài khoản, xin vui lòng đăng nhập <a class="text-primary" href="<?= BASE_URL ?>/login.php">tại đây</a></div>
             <button name="submit" type="submit" class="btn btn-primary">Đăng kí</button>
         </form>
     </main>
