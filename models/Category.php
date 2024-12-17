@@ -9,9 +9,9 @@ class Category{
         $this->name = $name;
     }
 
-    public function _construst(){}
+    public function __construst(){}
 
-    public function getId(){
+    public function getId(){   
         return $this->id;
     }
 

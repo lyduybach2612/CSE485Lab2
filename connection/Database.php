@@ -6,7 +6,7 @@
         private $password;
         private $port;
         private $conn;
-        public function __construct(){
+        public function _construct(){
             $this->host = 'localhost';
             $this->dbname = 'news';
             $this->username = 'root';

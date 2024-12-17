@@ -11,18 +11,18 @@
 </head>
 <body>
     <main class="container" style="max-width: 70%">
-        <h1 class="m-5 text-center text-danger text-uppercase">Danh sách các thể loại tin tức</h1>
+        <h1 class="m-5 text-center text-danger text-uppercase">List of news types <i class="text-primary bi bi-newspaper"></i></h1>
         <table class="table text-center">
         <thead class="border border-secondary">
             <tr>
                 <th class="border border-secondary">ID</th>
-                <th class="border border-secondary">Thể loại</th>
+                <th class="border border-secondary">Categories</th>
             </tr>
         </thead> 
         <tbody>
             <?php foreach ($categories as $category): ?>
             <tr class="align-middle">
-                <td class="border border-secondary"><?= $category->getId(); ?></td>
+                <th class="border border-secondary"><?= $category->getId(); ?></th>
                 <td class="border border-secondary"><?= $category->getName(); ?></td>
             </tr>
             <?php endforeach; ?>
