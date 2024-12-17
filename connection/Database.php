@@ -1,3 +1,4 @@
+
 <?php 
     class Database{
         private $host;
@@ -11,8 +12,8 @@
             $this->host = 'localhost';
             $this->dbname = 'news';
             $this->username = 'root';
-            $this->password = '';
-            $this->port = 3307;
+            $this->password = '123';
+            $this->port = 3306;
             $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbname;port=$this->port", $this->username, $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
@@ -21,3 +22,4 @@
             return $this->conn;
         }
     }
+
