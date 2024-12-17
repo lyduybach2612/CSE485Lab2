@@ -1,5 +1,4 @@
 <?php
-require_once "../../config/config.php";
 $message = '';
 if(isset($_GET['isRegistered'])){
     $message = 'Đăng kí thành công, vui lòng đăng nhập';
@@ -13,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $message = 'Tên tài khoản hoặc mật khẩu không đúng!';
         } else {
             $existingUser->getRole() == 1 ? $_SESSION['admin'] = true : $_SESSION['user'] = true;
+            $message='Bạn đã đăng nhập thành công';
         }
     }
 }
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <label for="password" class="form-label">Mật khẩu</label>
                 <input type="password" name="password" required class="form-control" id="password">
             </div>
-            <div class="mb-3">Nếu chưa có tài khoản, xin vui lòng đăng kí <a href="<?= BASE_URL ?>/view/auth/register.php">tại đây</a></div>
+            <div class="mb-3">Nếu chưa có tài khoản, xin vui lòng đăng kí <a href="<?= BASE_URL ?>/register">tại đây</a></div>
             <button name="submit" type="submit" class="btn btn-primary">Đăng nhập</button>
         </form>
     </main>
